@@ -150,9 +150,30 @@ pipeline {
         }
     }
 
-    post {
+   post {
+
         always {
-            archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+
+            script {
+
+                try {
+                    sh 'docker system prune -f'
+                } catch (Exception e) {
+                    echo "Docker cleanup skipped: ${e}"
+                }
+            }
+
+            cleanWs()
+        }
+
+        success {
+
+            echo 'Pipeline completed successfully!'
+        }
+
+        failure {
+
+            echo 'Pipeline failed!'
         }
     }
 }
