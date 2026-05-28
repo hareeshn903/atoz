@@ -20,7 +20,7 @@ pipeline {
 
         DOCKER_CREDENTIALS_ID = "dockerhub-creds"
 
-        SONARQUBE_ENV = "sonarqube"
+        SONARQUBE_ENV = "sonar"
 
         KUBECONFIG = credentials('kubeconfig')
 
