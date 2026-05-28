@@ -154,7 +154,19 @@ pipeline {
 
         always {
 
-            sh 'docker system prune -f'
+            script {
+
+                try {
+
+                    sh 'docker system prune -f'
+
+                } catch (Exception e) {
+
+                    echo "Docker cleanup skipped: ${e}"
+                }
+
+                cleanWs()
+            }
         }
 
         success {
