@@ -18,7 +18,7 @@ pipeline {
 
         IMAGE_TAG = "${BUILD_NUMBER}"
 
-        DOCKER_CREDENTIALS_ID = "dockerhub-creds"
+        DOCKER_CREDENTIALS_ID = "docker-cred"
 
         SONARQUBE_ENV = "sonar"
 
