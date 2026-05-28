@@ -1,6 +1,9 @@
 pipeline {
 
-    agent "docker-maven-trivy"
+    agent {
+        label 'docker-maven-trivy'
+    }
+
 
     tools {
         maven 'Maven3'
