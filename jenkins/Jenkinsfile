@@ -34,6 +34,20 @@ pipeline {
 
     stages {
 
+        stage('Verify Tools') {
+            steps {
+
+            ```
+                sh 'java -version'
+                sh 'mvn -version'
+                sh 'docker --version'
+                sh 'trivy --version'
+                sh 'helm version'
+                sh 'kubectl version --client'
+            }
+            ```
+            }
+            
         stage('Checkout') {
             steps {
                 checkout scm
