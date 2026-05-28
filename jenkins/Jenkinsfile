@@ -154,8 +154,8 @@ pipeline {
             steps {
 
                 sh """
-                kubectl rollout status deployment/mini-account-management \
-                -n siri
+                
+                kubectl rollout status deployment.apps/mini-account-management-mini-account-management -n siri
                 """
 
                 sh """
