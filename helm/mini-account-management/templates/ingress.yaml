@@ -1,0 +1,34 @@
+{{- if .Values.ingress.enabled }}
+
+apiVersion: networking.k8s.io/v1
+
+kind: Ingress
+
+metadata:
+  name: mini-account-management
+
+spec:
+
+  ingressClassName: {{ .Values.ingress.className }}
+
+  rules:
+
+    - host: {{ .Values.ingress.host }}
+
+      http:
+
+        paths:
+
+          - path: /
+
+            pathType: Prefix
+
+            backend:
+
+              service:
+                name: mini-account-management
+
+                port:
+                  number: 8080
+
+{{- end }}

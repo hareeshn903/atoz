@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: {{ include "mini-account-management.fullname" . }}
+
+spec:
+  replicas: {{ .Values.replicaCount }}
+
+  selector:
+    matchLabels:
+      app: mini-account-management
+
+  template:
+
+    metadata:
+      labels:
+        app: mini-account-management
+
+    spec:
+
+      containers:
+
+        - name: mini-account-management
+
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+
+          ports:
+            - containerPort: 8080
+
+          env:
+
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://postgres:5432/{{ .Values.postgres.database }}
+
+            - name: SPRING_DATASOURCE_USERNAME
+              value: {{ .Values.postgres.username }}
+
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: POSTGRES_PASSWORD
+
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+
+          livenessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+
+            initialDelaySeconds: 60
+            periodSeconds: 10
+
+          readinessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+
+            initialDelaySeconds: 30
+            periodSeconds: 5

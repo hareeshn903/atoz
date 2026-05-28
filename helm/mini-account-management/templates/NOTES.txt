@@ -1,0 +1,9 @@
+Application deployed successfully!
+
+Access application:
+
+kubectl port-forward service/mini-account-management 8080:8080
+
+Then open:
+
+http://localhost:8080/swagger-ui/index.html

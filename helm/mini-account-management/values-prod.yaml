@@ -1,0 +1,9 @@
+replicaCount: 5
+
+app:
+  profile: prod
+
+resources:
+  limits:
+    cpu: 2
+    memory: 4Gi
