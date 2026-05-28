@@ -154,18 +154,28 @@ pipeline {
 
         always {
 
-            script {
+            node {
 
-                try {
+                script {
 
-                    sh 'docker system prune -f'
+                    try {
 
-                } catch (Exception e) {
+                        sh 'docker system prune -f || true'
 
-                    echo "Docker cleanup skipped: ${e}"
+                    } catch (err) {
+
+                        echo "Docker cleanup skipped: ${err}"
+                    }
+
+                    try {
+
+                        cleanWs()
+
+                    } catch (err) {
+
+                        echo "Workspace cleanup skipped: ${err}"
+                    }
                 }
-
-                cleanWs()
             }
         }
 
