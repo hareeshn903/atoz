@@ -48,7 +48,7 @@ pipeline {
 
         stage('Unit Test') {
             steps {
-                echo "skip tests"
+                sh 'mvn test'
             }
         }
 
