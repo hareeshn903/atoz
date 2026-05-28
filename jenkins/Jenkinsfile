@@ -151,42 +151,8 @@ pipeline {
     }
 
     post {
-
         always {
-
-            
-
-                script {
-
-                    try {
-
-                        sh 'docker system prune -f || true'
-
-                    } catch (err) {
-
-                        echo "Docker cleanup skipped: ${err}"
-                    }
-
-                    try {
-
-                        cleanWs()
-
-                    } catch (err) {
-
-                        echo "Workspace cleanup skipped: ${err}"
-                    }
-                }
-            
-        }
-
-        success {
-
-            echo 'Pipeline completed successfully!'
-        }
-
-        failure {
-
-            echo 'Pipeline failed!'
+            archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
         }
     }
 }
