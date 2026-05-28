@@ -154,7 +154,7 @@ pipeline {
 
         always {
 
-            node {
+            
 
                 script {
 
@@ -176,7 +176,7 @@ pipeline {
                         echo "Workspace cleanup skipped: ${err}"
                     }
                 }
-            }
+            
         }
 
         success {
