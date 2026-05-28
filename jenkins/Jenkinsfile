@@ -14,7 +14,7 @@ pipeline {
 
         APP_NAME = "mini-account-management"
 
-        IMAGE_NAME = "YOUR_DOCKERHUB_USERNAME/mini-account-management"
+        IMAGE_NAME = "hareeshn903/atoz"
 
         IMAGE_TAG = "${BUILD_NUMBER}"
 
