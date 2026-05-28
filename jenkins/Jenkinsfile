@@ -36,8 +36,6 @@ pipeline {
 
         stage('Verify Tools') {
             steps {
-
-            ```
                 sh 'java -version'
                 sh 'mvn -version'
                 sh 'docker --version'
@@ -45,7 +43,7 @@ pipeline {
                 sh 'helm version'
                 sh 'kubectl version --client'
             }
-            ```
+
             }
             
         stage('Checkout') {
