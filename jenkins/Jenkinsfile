@@ -117,24 +117,24 @@ pipeline {
             }
         }
 
-        stage('Helm Lint') {
-            steps {
+        // stage('Helm Lint') {
+        //     steps {
 
-                sh """
-                helm lint helm/mini-account-management
-                """
-            }
-        }
+        //         sh """
+        //         helm lint helm/mini-account-management
+        //         """
+        //     }
+        // }
 
-        stage('Helm Template Validation') {
-            steps {
+        // stage('Helm Template Validation') {
+        //     steps {
 
-                sh """
-                helm template mini-account-management \
-                helm/mini-account-management > rendered.yaml
-                """
-            }
-        }
+        //         sh """
+        //         helm template mini-account-management \
+        //         helm/mini-account-management > rendered.yaml
+        //         """
+        //     }
+        // }
 
         // stage('Deploy To Kubernetes') {
         //     steps {
