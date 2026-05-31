@@ -19,7 +19,7 @@ public class AccountController {
     }
     @GetMapping("/version")
     public String version() {
-        return "GitOps Trigger v1";
+        return "GitOps Trigger v2";
     }
 
     @PostMapping
