@@ -1,9 +1,0 @@
-/Users/hari/myws/myproj/atoz/src/main/java/com/hari/mini_account_management/MiniAccountManagementApplication.java
-/Users/hari/myws/myproj/atoz/src/main/java/com/hari/mini_account_management/controller/AccountController.java
-/Users/hari/myws/myproj/atoz/src/main/java/com/hari/mini_account_management/dto/request/CreateAccountRequest.java
-/Users/hari/myws/myproj/atoz/src/main/java/com/hari/mini_account_management/dto/response/AccountResponse.java
-/Users/hari/myws/myproj/atoz/src/main/java/com/hari/mini_account_management/entity/Account.java
-/Users/hari/myws/myproj/atoz/src/main/java/com/hari/mini_account_management/exception/GlobalExceptionHandler.java
-/Users/hari/myws/myproj/atoz/src/main/java/com/hari/mini_account_management/exception/ResourceNotFoundException.java
-/Users/hari/myws/myproj/atoz/src/main/java/com/hari/mini_account_management/repository/AccountRepository.java
-/Users/hari/myws/myproj/atoz/src/main/java/com/hari/mini_account_management/service/AccountService.java

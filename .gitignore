@@ -1,0 +1,71 @@
+# ==========================================
+# Build Tools and Artifacts
+# ==========================================
+# Maven build directory
+target/
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Gradle build directory
+build/
+.gradle/
+/out/
+
+# ==========================================
+# IDE Specific Files
+# ==========================================
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Eclipse
+.metadata/
+.classpath
+.project
+.settings/
+.factorypath
+.springBeans
+
+# Visual Studio Code
+.vscode/
+
+# NetBeans
+**/nbproject/private/
+**/nbproject/Android-properties.properties
+**/nbproject/maven-pom.properties
+build/
+nbbuild/
+dist/
+nbdist/
+
+# ==========================================
+# Spring Boot Specifics
+# ==========================================
+# Local configuration files containing credentials
+.env
+*.properties.local
+*.yml.local
+application-local.properties
+application-local.yml
+
+# Spring Tools Suite cache
+.sts4-cache/
+
+# ==========================================
+# Log Files and OS Specifics
+# ==========================================
+# Logs
+*.log
+logs/
+
+# OS-specific hidden files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
