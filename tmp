@@ -1,0 +1,104 @@
+What is a Load Balancer? What Is elb in aws? 
+Why do we use a Load Balancer?
+How AWS Elastic Load Balancing Works?  
+List few Pros/cons of using AWS Elastic Load Balancer?  
+What is the difference between auto-scaling and ELB?  
+List type of techniques that are used by load balancers?  
+What do you mean by a target group in AWS Load Balancing?  
+What is the difference between a load balancer and Amazon's Route 53?  
+Can we use multiple Aws elastic load balancers for single EC2 Instance?  
+Why AWS Elastic Load Balancers have more than 1 IP addresses?  
+Can you explain NLB in AWS?  
+How to create an alert for AWS load balancer 'outofservice'?  
+Why does ELB have 60 seconds of non-configurable request timeout?  
+How do we create a VPC load balancer in AWS?  
+What is VPC load balancer?
+Difference between horizontal and vertical scaling
+When should we use vertical scaling?
+What’s the difference between Auto Scaling and Load Balancing?
+How do you configure Auto Scaling for EC2 instances?
+Give me one or two examples of what a load balancer does apart from distributing traffic. ?
+Explain Target Groups in AWS and when to use them.
+What are the different types of Load Balancers in AWS?
+What is the difference between ALB & NLB sing CloudWatch?
+What is the difference between ALB, NLB, and CLB?
+What are Listeners and how are they configured?**
+Your Auto Scaling group is not launching new instances even when CPU utilization is high what could be the reason?
+How does Auto Scaling work and what are its types?
+What is a Target Group?
+What is a Listener in Load Balancer?
+What are Health Checks in Load Balancer?
+Difference between active and passive health checks?
+How does load balancer improve high availability?
+What is Sticky Session?
+When do you use Application Load Balancer (ALB)?
+When do you use Network Load Balancer (NLB)?
+When do you use Gateway Load Balancer (GWLB)?
+Can ALB handle WebSockets?
+Can ALB load-balance to IP addresses?
+What protocols are supported by ALB?
+What protocols are supported by NLB?
+Difference between L7 vs L4 Load Balancer?
+ALB vs API Gateway difference?
+Does ALB support HTTPS termination?
+What is SSL/TLS offloading?
+What are Rules in ALB?
+What is Path-based routing?
+What is Host-based routing?
+How connection draining works? (Deregistration delay)
+What is Cross-Zone Load Balancing?
+Which ELB supports static IP?
+Do ALB/NLB support IPv6?
+What is Proxy Protocol?
+How to enable Logging for ELB? (Access logs)
+What is Auto Scaling in AWS?
+What is an Auto Scaling Group (ASG)?
+What is a Launch Template?
+What is the difference between Launch Template and Launch Configuration?
+What is desired capacity in Auto Scaling?
+What is minimum and maximum size?
+What are scaling policies?
+What is dynamic scaling?
+What is scheduled scaling?
+What is predictive scaling?
+How does Auto Scaling improve high availability?
+What are CloudWatch Alarms used for in scaling?
+How does Auto Scaling replace unhealthy instances?
+What is cooldown period in Auto Scaling?
+What is instance warm-up?
+What are lifecycle hooks?
+What is scaling out vs scaling in?
+What is target tracking scaling?
+What is step scaling?
+What is simple scaling?
+What is mixed instance policy?
+What is instance weighting?
+How to use spot instances in Auto Scaling?
+Difference between Spot, On-Demand, and Reserved in ASG?
+Can Auto Scaling work with Load Balancer?
+What is health check grace period?
+Auto Scaling with multiple Availability Zones?
+Can Auto Scaling distribute instances across AZs automatically?
+Difference between EC2 Status Check and ELB Health Check?
+How ASG handles instance termination?
+What is termination policy?
+What is default termination policy?
+EC2 is unhealthy; how will Auto Scaling replace it?
+How to automatically add more EC2 during traffic spike?
+How to perform zero-downtime deployments with Auto Scaling?
+Why Auto Scaling is not launching new instances?
+Why Auto Scaling is launching too many instances?
+ASG scale-in is terminating the wrong instance — why?
+App takes long time to boot — how to handle?
+How to protect an instance from termination?
+How to attach ASG to ALB?
+How to attach ASG to NLB?
+How to add custom logic before/after instance launch?
+Scaling based on memory metrics — how?
+CPU is 100% but scaling not happening — what to check?
+How to perform rolling update using Auto Scaling
+How do you troubleshoot ASG when scaling fails?
+ASG creates an instance but immediately terminates — why?
+How to run user-data script in Auto Scaling correctly?
+What happens when an AZ fails in ASG?
+How does ASG ensure equal distribution across AZs?
