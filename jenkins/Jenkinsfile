@@ -14,7 +14,7 @@ pipeline {
 
         APP_NAME = "mini-account-management"
 
-        IMAGE_NAME = "hareeshn903/atoz"
+        IMAGE_NAME = "hareeshn903/atoz-app"
 
         IMAGE_TAG = "${BUILD_NUMBER}"
 
@@ -136,33 +136,65 @@ pipeline {
             }
         }
 
-        stage('Deploy To Kubernetes') {
-            steps {
+        // stage('Deploy To Kubernetes') {
+        //     steps {
 
-                sh """
-                helm upgrade --install mini-account-management \
-                helm/mini-account-management \
-                --namespace siri \
-                --create-namespace \
-                --set image.repository=${IMAGE_NAME} \
-                --set image.tag=${IMAGE_TAG}
-                """
-            }
-        }
+        //         sh """
+        //         helm upgrade --install mini-account-management \
+        //         helm/mini-account-management \
+        //         --namespace siri \
+        //         --create-namespace \
+        //         --set image.repository=${IMAGE_NAME} \
+        //         --set image.tag=${IMAGE_TAG}
+        //         """
+        //     }
+        // }
 
-        stage('Verify Deployment') {
-            steps {
+        // stage('Verify Deployment') {
+        //     steps {
 
-                sh """
+        //         sh """
                 
-                kubectl rollout status deployment.apps/mini-account-management-mini-account-management -n siri
-                """
+        //         kubectl rollout status deployment.apps/mini-account-management-mini-account-management -n siri
+        //         """
 
-                sh """
-                kubectl get pods -n siri
-                """
-            }
+        //         sh """
+        //         kubectl get pods -n siri
+        //         """
+        //     }
+        // }
+        stage('Update GitOps Repository') {
+
+    steps {
+
+        withCredentials([
+            usernamePassword(
+                credentialsId: 'github-creds',
+                usernameVariable: 'GIT_USER',
+                passwordVariable: 'GIT_TOKEN'
+            )
+        ]) {
+
+            sh '''
+            rm -rf gitops
+
+            git clone https://github.com/hareeshn903/atoz-gitops.git gitops
+
+            cd gitops
+
+            sed -i "s/tag:.*/tag: ${IMAGE_TAG}/" \
+            helm/mini-account-management/values-dev.yaml
+
+            git config user.email "jenkins@local"
+            git config user.name "jenkins"
+
+            git add .
+            git commit -m "Update image tag ${IMAGE_TAG}"
+            git push
+            '''
         }
+    }
+}
     }
 
    post {
