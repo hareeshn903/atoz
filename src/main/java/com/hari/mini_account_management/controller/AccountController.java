@@ -17,6 +17,10 @@ public class AccountController {
     public AccountController(AccountService service) {
         this.service = service;
     }
+    @GetMapping("/version")
+    public String version() {
+        return "GitOps Trigger v1";
+    }
 
     @PostMapping
     public Account create(@RequestBody Account account) {
