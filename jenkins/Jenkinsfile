@@ -178,17 +178,21 @@ pipeline {
             sh '''
             rm -rf gitops
 
-            git clone https://github.com/hareeshn903/atoz-gitops.git gitops
+            git clone https://hareeshn903:${GitHub-pat}@github.com/hareeshn903/atoz-gitops.git gitops
+            
 
             cd gitops
             echo "Before change:"
             grep -R "tag:" helm/mini-account-management || true
 
             sed -i 's/tag:.*/tag: "${IMAGE_TAG}"/' \
-            helm/mini-account-management/values-dev.yaml
+            
+            helm/mini-account-management/values.yaml
+            echo "After:"
+            grep -n "tag:" helm/mini-account-management/values.yaml
 
-            echo "After change:"
-            grep -R "tag:" helm/mini-account-management || true
+            cat helm/mini-account-management/values.yaml
+            git diff
 
             git config user.email "hareeshn903@gmail.com"
             git config user.name "harijenkins"
